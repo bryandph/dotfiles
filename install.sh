@@ -16,3 +16,4 @@
 cp .zshrc ~/
 cp .p10k.zsh ~/
 cp .default-python-packages ~/
+cp .tool-versions ~/
