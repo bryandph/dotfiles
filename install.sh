@@ -1,7 +1,8 @@
 # /usr/bin/env zsh
 
 # RUN sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/v1.1.1/zsh-in-docker.sh)" -- \
-./zsh-in-docker.sh -p git \
+./zsh-in-docker.sh \
+    -p git \
     -p asdf \
     -p direnv \
     -p https://github.com/zsh-users/zsh-autosuggestions \
