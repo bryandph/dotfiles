@@ -11,7 +11,7 @@ export LC_ALL='en_US.UTF-8'
 export TERM=xterm
 
 ##### Zsh/Oh-my-Zsh Configuration
-export ZSH="/home/$HOME/.oh-my-zsh"
+export ZSH="/$HOME/.oh-my-zsh"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(git asdf direnv zsh-autosuggestions zsh-completions zsh-history-substring-search zsh-syntax-highlighting history-substring-search )
