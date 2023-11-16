@@ -16,9 +16,6 @@ export ZSH="/home/vscode/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(git asdf direnv zsh-autosuggestions zsh-completions zsh-history-substring-search zsh-syntax-highlighting history-substring-search )
 
-
-SPACESHIP_PROMPT_ADD_NEWLINE="false"
-SPACESHIP_PROMPT_SEPARATE_LINE="false"
 bindkey "\$terminfo[kcuu1]" history-substring-search-up
 bindkey "\$terminfo[kcud1]" history-substring-search-down
 source $ZSH/oh-my-zsh.sh
