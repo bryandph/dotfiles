@@ -20,7 +20,7 @@ bindkey "\$terminfo[kcuu1]" history-substring-search-up
 bindkey "\$terminfo[kcud1]" history-substring-search-down
 source $ZSH/oh-my-zsh.sh
 
-. /home/$HOME/.asdf/asdf.sh
+. $HOME/.asdf/asdf.sh
 
 source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
 
