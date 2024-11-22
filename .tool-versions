@@ -1,0 +1,15 @@
+kubectl 1.30.3
+kubectx 0.9.5
+k9s 0.32.6
+jq 1.7.1
+python 3.12.0
+direnv 2.34.0
+helm 3.15.3
+vault 1.17.3
+bitwarden-secrets-manager 0.5.0
+uv 0.4.3
+rust 1.82.0
+golang 1.22.5
+nodejs 23.1.0
+awscli 2.19.4
+opentofu 1.8.5
