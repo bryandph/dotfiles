@@ -103,7 +103,7 @@ function doIt() {
         --exclude ".devcontainer/" \
         --exclude "Makefile" \
         -avh --no-perms /home/vscode/.dotfiles/ ~
-  source ~/.zshrc
+  echo "refresh your shell with: source ~/.zshrc"
 }
 
 # Check the OS and install required dependencies
