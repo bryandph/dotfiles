@@ -92,7 +92,6 @@ function ensure_direnv_plugin() {
 }
 
 function ensure_all_asdf_plugins() {
-  . /home/$USERNAME/.asdf/asdf.sh
   echo "Ensuring all .tool-versions plugins are added to asdf..."
   cut -d' ' -f1 .tool-versions | xargs -I{} asdf plugin add {}
 }
@@ -103,7 +102,7 @@ function doIt() {
         --exclude "README.md" \
         --exclude ".devcontainer/" \
         --exclude "Makefile" \
-        -avh --no-perms . ~
+        -avh --no-perms /home/vscode/.dotfiles/ ~
   source ~/.zshrc
 }
 
@@ -122,6 +121,8 @@ install_starship
 
 # Install or update asdf
 install_asdf
+
+. /home/$USERNAME/.asdf/asdf.sh
 
 # Ensure direnv plugin for asdf is installed
 ensure_direnv_plugin
