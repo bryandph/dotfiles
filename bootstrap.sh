@@ -114,7 +114,7 @@ else
 fi
 
 # Change shell to zsh if needed
-change_shell_to_zsh
+# change_shell_to_zsh
 
 # Install Starship
 install_starship
