@@ -79,7 +79,7 @@ function install_asdf() {
 function install_starship() {
   if ! command -v starship &>/dev/null; then
     echo "Installing Starship..."
-    sh -c "$(curl -fsSL https://starship.rs/install.sh)" --yes
+    curl -sS https://starship.rs/install.sh | sh -s -- -y
   fi
 }
 
