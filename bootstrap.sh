@@ -92,6 +92,7 @@ function ensure_direnv_plugin() {
 }
 
 function ensure_all_asdf_plugins() {
+  . /home/$USERNAME/.asdf/asdf.sh
   echo "Ensuring all .tool-versions plugins are added to asdf..."
   cut -d' ' -f1 .tool-versions | xargs -I{} asdf plugin add {}
 }
