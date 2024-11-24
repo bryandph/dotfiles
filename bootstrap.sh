@@ -122,7 +122,7 @@ install_starship
 # Install or update asdf
 install_asdf
 
-. /home/$USERNAME/.asdf/asdf.sh
+. "/home/$USERNAME/.asdf/asdf.sh"
 
 # Ensure direnv plugin for asdf is installed
 ensure_direnv_plugin
