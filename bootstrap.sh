@@ -111,17 +111,9 @@ isDockerContainer(){
 }
 
 function doIt() {
-  #rsync --exclude ".git/" \
-  #      --exclude "bootstrap.sh" \
-  #      --exclude "README.md" \
-  #      --exclude ".devcontainer/" \
-  #      --exclude "Makefile" \
-  #      -avh --no-perms $HOME/.dotfiles $HOME
-  # cp .zshrc ~/.zshrc
-  # cp .gitignore ~/.gitignore
-  # cp .config ~/.config
-  find . -type f ! -path "./.git/*" ! -name "README.md" -print0 | rsync --files-from=- --from0 --relative -av . ~
-  echo "refresh your shell with: source ~/.zshrc"
+    find . -type f ! -path "./.git/*" ! -name "README.md" -print0 | rsync --files-from=- --from0 --relative -av . ~
+    source ~/.zshrc
+    echo "refresh your shell with: source ~/.zshrc"
 }
 
 # Check the OS and install required dependencies
@@ -140,7 +132,12 @@ install_starship
 # Install or update asdf
 install_asdf
 
-. $HOME/.asdf/asdf.sh
+if isDockerBuildkit || (isDocker && ! isDockerContainer)
+then
+  . "/home/$USERNAME/.asdf/asdf.sh"
+else
+  . ~/.asdf/asdf.sh
+fi
 
 # Ensure direnv plugin for asdf is installed
 ensure_direnv_plugin
