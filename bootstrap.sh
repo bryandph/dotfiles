@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 set -e
-set -v
+#set -v
 
 cd "$(dirname "${BASH_SOURCE[0]}")"
 git pull origin main
