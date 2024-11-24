@@ -9,7 +9,7 @@ SAVEHIST=10000000
 
 eval "$(starship init zsh)"
 
-. /home/bryan/.asdf/asdf.sh
+. $HOME/.asdf/asdf.sh
 
 source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
 
@@ -23,4 +23,4 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-export GPG_TTY=$(tty)
+export GPG_TTY=$(tty)git
