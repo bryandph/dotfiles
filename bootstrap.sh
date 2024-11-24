@@ -96,6 +96,20 @@ function ensure_all_asdf_plugins() {
   cut -d' ' -f1 .tool-versions | xargs -I{} asdf plugin add {}
 }
 
+isDocker(){
+    local cgroup=/proc/1/cgroup
+    test -f $cgroup && [[ "$(<$cgroup)" = *:cpuset:/docker/* ]]
+}
+
+isDockerBuildkit(){
+    local cgroup=/proc/1/cgroup
+    test -f $cgroup && [[ "$(<$cgroup)" = *:cpuset:/docker/buildkit/* ]]
+}
+
+isDockerContainer(){
+    [ -e /.dockerenv ]
+}
+
 function doIt() {
   rsync --exclude ".git/" \
         --exclude "bootstrap.sh" \
@@ -122,7 +136,12 @@ install_starship
 # Install or update asdf
 install_asdf
 
-. "/home/$USERNAME/.asdf/asdf.sh"
+if isDockerBuildkit || (isDocker && ! isDockerContainer)
+then
+  . "/home/$USERNAME/.asdf/asdf.sh"
+else
+  . ~/.asdf/asdf.sh
+fi
 
 # Ensure direnv plugin for asdf is installed
 ensure_direnv_plugin
