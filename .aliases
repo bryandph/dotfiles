@@ -1,0 +1,4 @@
+source ~/.alias.kube
+
+alias terraform=tofu
+alias tf=terraform

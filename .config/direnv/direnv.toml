@@ -2,4 +2,4 @@
 load_dotenv = true
 
 [whitelist]
-prefix = ["/mnt/b/BPH","/home/bryan","/workspace"]
+prefix = ["/mnt/b/BPH","/home/bryan","/workspace","/Users/bryan"]
